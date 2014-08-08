@@ -147,6 +147,7 @@ file_format_t allowed_formats[] =
 	{ "tif32",  format_t("tif",  32) },
 	{ "tif16",  format_t("tif",  16) },
 	{ "tif8",   format_t("tif",   8) },
+	{ "cube",   format_t("cube",   0) },
 	{ NULL,     format_t()           }
 };
 

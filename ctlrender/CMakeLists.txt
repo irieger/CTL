@@ -27,6 +27,7 @@ add_executable( ctlrender
   dpx_file.cc
   exr_file.cc
   tiff_file.cc
+  cube_file.cc
   format.cc
   compression.cc
 )

@@ -57,6 +57,7 @@
 #include "tiff_file.hh"
 #include "exr_file.hh"
 #include "aces_file.hh"
+#include "cube_file.hh"
 #include <dpx.hh>
 #include <CtlRcPtr.h>
 #include <CtlFunctionCall.h>
@@ -757,7 +758,8 @@ void transform(const char *inputFile, const char *outputFile,
 
 	if (!dpx_read(inputFile, input_scale, &image_buffer, image_format) &&
 		!exr_read(inputFile, input_scale, &image_buffer, image_format) &&
-		!tiff_read(inputFile, input_scale, &image_buffer, image_format))
+		!tiff_read(inputFile, input_scale, &image_buffer, image_format) &&
+		!cube_read(inputFile, input_scale, &image_buffer, image_format) )
 	{
 		fprintf(stderr, "unable to read file %s (unknown format).\n", inputFile);
 		exit(1);
@@ -845,6 +847,10 @@ void transform(const char *inputFile, const char *outputFile,
 	else if (!strncmp(image_format->ext, "dpx", 3))
 	{
 		dpx_write(outputFile, output_scale, image_buffer, image_format);
+	}
+	else if (!strncmp(image_format->ext, "cube", 3))
+	{
+		cube_write(outputFile, output_scale, image_buffer, image_format);
 	}
 	else if (!strncmp(image_format->ext, "tiff", 3))
 	{
