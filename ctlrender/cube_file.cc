@@ -1,6 +1,22 @@
 /*
  * Dummy input file + CUBE LUT output file.
  *
+ * This file type offers a pseudo input format which is just a pattern generator
+ * that generates an pixel pattern which represents cube input values to pass
+ * through a bunch of ctl files and generate a cube lut from it.
+ * 
+ * Only tested with luts converting different formats through IDT, RRT and ODT or
+ * A combination of IDT + aces2acesLog16i and another lut with aceslog2aces + RRT
+ * + ODT. Not intended for use to make luts working with linear in or out.
+ * 
+ * Attention: Needs modified acesLog16i_to_aces.ctl. See:
+ *   https://groups.google.com/forum/#!topic/academyaces/VD7Yd0Yh7Sg
+ *
+ * Usage sample:
+ *   ctlrender -ctl idt-alexav3-logC-EI800.ctl -ctl aces_to_acesLog16i.ctl 129 alexaLogC-EI800_2_acesLog.129.cube
+ * This will create a 129*129*129 LUT to convert logC to acesLog. Input file
+ * parameter is just the dimension of the generated lut.
+ * 
  * by Ingmar Rieger (git@irieger.net)
  */
 

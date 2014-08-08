@@ -1,6 +1,7 @@
 /*
  * Dummy input file + CUBE LUT output file.
  * More information in cube_file.cc
+ 
  * by Ingmar Rieger (git@irieger.net)
  */
 
