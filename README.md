@@ -1,16 +1,17 @@
 ## This is a modified version of the ctl tools ##
 
 This version of ctlrender is modified to be able to convert ctl files to cube
-luts. Therefor I hacked in some code in an experimental way adding a pseudo
-input file type and cube output file type.
+luts. **Therefor I hacked in some code in an experimental way adding a pseudo
+input file type and cube output file type. This is just experimental code. Use
+with caution.**
 
 This file type offers a pseudo input format which is just a pattern generator
 that generates an pixel pattern which represents cube input values to pass
 through a bunch of ctl files and generate a cube lut from it.
  
 Only tested with luts converting different formats through IDT, RRT and ODT or
-A combination of IDT + aces2acesLog16i and another lut with aceslog2aces + RRT
-+ ODT. Not intended for use to make luts working with linear in or out.
+A combination of IDT + aces2acesLog16i and another lut with aceslog2aces +
+RRT + ODT. Not intended for use to make luts working with linear in or out.
 
 Attention: Needs modified acesLog16i_to_aces.ctl. See: 
 https://groups.google.com/forum/#!topic/academyaces/VD7Yd0Yh7Sg

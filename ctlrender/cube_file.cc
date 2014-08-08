@@ -31,6 +31,12 @@
 uint cube_file_lut_size;
 
 
+/*
+ * Pseudo file reader. This method doesn't read a file but generates a pattern
+ * simulating a LUT input with the number of steps defined by the "filename".
+ *
+ * Will die on invalid inputs as a simple error handling method!
+ */
 bool cube_read(const char *name, float scale,
 				ctl::dpx::fb<float> *pixels,
 				format_t *format) {
@@ -79,6 +85,13 @@ bool cube_read(const char *name, float scale,
 }
 
 
+/*
+ * Cube file writer. Will just generate a cube lut with the dimension defined
+ * in the input function by writing the result of the transform (pixel values)
+ * to a cube file line by line.
+ * 
+ * Dies on invalid output (non-existing or non-writeable)!
+ */
 void cube_write(const char *name, float scale,
 				const ctl::dpx::fb<float> &pixels,
 				format_t *format) {
