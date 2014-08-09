@@ -23,6 +23,18 @@ https://groups.google.com/forum/#!topic/academyaces/VD7Yd0Yh7Sg
 This will create a 129*129*129 LUT to convert logC to acesLog. Input file
 parameter is just the dimension of the generated lut.
 
+### Fixed CTLs for acesLog and acesProxy needed ###
+
+To generate LUTs with acesLog or acesProxy color space you need to use modified LUTs. I
+forked aces-dev version 0.7.1 (current as of writing this) and modified acesLog16i_to_aces.ctl,
+aces_to_acesProxy12.ctl and acesProxy12_to_aces.ctl.
+
+To generate LUTs with acesLog or acesProxy color space **only use acesLog16i and acesProxy12
+CTL files from this repository!** otherwise the input/output value range may not match the
+value range for LUT files.
+
+**https://github.com/irieger/aces-dev**
+
 
 # The Color Transformation Language #
  
