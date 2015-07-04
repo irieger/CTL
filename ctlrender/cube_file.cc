@@ -151,8 +151,7 @@ void cube_write(const char *name, float scale,
 	fprintf(fp_out, "LUT_3D_SIZE %d\n", cube_file_lut_size);
 
 	if (cube_min != 0.0 && cube_max != 1.0) {
-        fprintf(fp_out, "DOMAIN_MIN %.8f %.8f %.8f\n", cube_min, cube_min, cube_min);
-        fprintf(fp_out, "DOMAIN_MAX %.8f %.8f %.8f\n", cube_max, cube_max, cube_max);
+        fprintf(fp_out, "LUT_3D_INPUT_RANGE %.5f %.5f\n", cube_min, cube_max);
     }
 
 
